@@ -14,7 +14,7 @@ const ToolCard = ({ product }) => {
         <h3 className="text-2xl">${price}</h3>
         <h5 className="text-lg">Minimum Order: {minOrder}</h5>
         <h4 className="text-lg">Available: {available}</h4>
-        <p>{desc.slice(0, 150)}</p>
+        <p className=" text-lg">{desc.slice(0, 150)}</p>
         <div class="card-actions justify-end mt-4">
           <button
             onClick={() => navigate("/purchase")}
