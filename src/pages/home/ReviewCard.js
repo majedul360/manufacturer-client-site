@@ -13,7 +13,7 @@ const ReviewCard = ({ review }) => {
           <h2 className="capitalize">{country}</h2>
         </div>
       </div>
-      <p className="px-8 my-6 text-lg">{desc.slice(0, 150)}</p>
+      <p className="px-8 my-6 text-lg">{desc.slice(0, 144)}</p>
       <div className="px-8 ">
         {stars.length > 0 &&
           stars.length < 6 &&
