@@ -1,7 +1,7 @@
 import React from "react";
 import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import auth from "../../firebase/Firebase.int";
 import SocialLogin from "../../shared/socialLogin/SocialLogin";
 
@@ -81,6 +81,12 @@ const Registar = () => {
 
             <input type="submit" value="Registar" className="btn w-full mt-2" />
           </form>
+          <p className="capitalize text-sm mt-2">
+            already have an account?{" "}
+            <Link to="/login" className="text-lg">
+              Login
+            </Link>
+          </p>
         </div>
       </div>
     </div>

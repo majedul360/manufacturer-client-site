@@ -1,13 +1,33 @@
-import React from "react";
+import React, { useState } from "react";
+import {
+  useSendPasswordResetEmail,
+  useSignInWithEmailAndPassword,
+} from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
+import auth from "../../firebase/Firebase.int";
 import SocialLogin from "../../shared/socialLogin/SocialLogin";
+import { Link } from "react-router-dom";
+
 const Login = () => {
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
-  const onSubmit = (data) => console.log(data);
+
+  // login with email password
+  const [signInWithEmailAndPassword, user, loading, error] =
+    useSignInWithEmailAndPassword(auth);
+
+  // password reset email
+  const [sendPasswordResetEmail, sending, passwordResetError] =
+    useSendPasswordResetEmail(auth);
+
+  const [email, setEmail] = useState("");
+
+  const onSubmit = (data) => {
+    signInWithEmailAndPassword(data.email, data.password);
+  };
   return (
     <div className="flex items-center justify-center h-[40rem]">
       <div>
@@ -23,6 +43,7 @@ const Login = () => {
               type="email"
               placeholder="Enter your email"
               class="input w-full input-bordered my-2"
+              onChange={(e) => setEmail(e.target.value)}
             />
             <br />
             {errors.email?.type === "required" && (
@@ -50,9 +71,25 @@ const Login = () => {
                 Please enter minimum 6 characters password
               </span>
             )}
-
+            {error?.message && (
+              <span className="text-red-500">{error?.message}</span>
+            )}
             <input type="submit" value="Login" className="btn w-full mt-2" />
           </form>
+          <p className=" text-sm mt-2">
+            New to WoodStore?{" "}
+            <Link to="/registar" className="text-lg">
+              Create An Account
+            </Link>
+          </p>
+          <p
+            className=" underline cursor-pointer"
+            onClick={async () => {
+              await sendPasswordResetEmail(email);
+            }}
+          >
+            Forgot password!
+          </p>
         </div>
       </div>
     </div>
