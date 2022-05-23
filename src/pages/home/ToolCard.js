@@ -12,12 +12,12 @@ const ToolCard = ({ product }) => {
       <div class="card-body">
         <h2 class="card-title">{name}</h2>
         <h3 className="text-2xl">${price}</h3>
-        <h5 className="text-lg">Minimum Order: {minOrder}</h5>
-        <h4 className="text-lg">Available: {available}</h4>
+        <h5 className="text-lg">Minimum Order: {minOrder} pieces</h5>
+        <h4 className="text-lg">Available: {available} pieces</h4>
         <p className=" text-lg">{desc.slice(0, 150)}</p>
         <div class="card-actions justify-end mt-4">
           <button
-            onClick={() => navigate("/purchase")}
+            onClick={() => navigate(`/purchase/${_id}`)}
             class="btn btn-primary text-black hover:text-white"
           >
             Buy Now

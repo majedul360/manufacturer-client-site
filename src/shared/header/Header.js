@@ -35,11 +35,7 @@ const Header = () => {
                 Home
               </Link>
             </li>
-            <li>
-              <Link to="/purchase" className=" text-2xl lg:text-white">
-                Purchase
-              </Link>
-            </li>
+
             <li>
               <Link to="/registar" className=" text-2xl lg:text-white">
                 Registar
@@ -72,11 +68,7 @@ const Header = () => {
               Home
             </Link>
           </li>
-          <li>
-            <Link to="/purchase" className="text-2xl lg:text-white">
-              Purchase
-            </Link>
-          </li>
+
           <li>
             <Link to="/registar" className=" text-2xl lg:text-white">
               Registar
