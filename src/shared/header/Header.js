@@ -7,7 +7,7 @@ import auth from "../../firebase/Firebase.int";
 const Header = () => {
   const [user] = useAuthState(auth);
   return (
-    <div class="navbar bg-black">
+    <div class="navbar bg-black sticky top-0 z-10">
       <div class="navbar-start">
         <div class="dropdown">
           <label tabindex="0" class="btn btn-ghost lg:hidden">
@@ -84,6 +84,11 @@ const Header = () => {
           {user ? (
             <>
               <li>
+                <Link to="/dashboard" className=" text-2xl lg:text-white">
+                  Dashboard
+                </Link>
+              </li>
+              <li>
                 <span
                   className=" text-2xl lg:text-white"
                   onClick={() => signOut(auth)}
@@ -105,6 +110,24 @@ const Header = () => {
             </li>
           )}
         </ul>
+      </div>
+      <div className="navbar-end">
+        <label tabindex="0" class="btn btn-ghost lg:hidden" for="dashboard">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-5 w-5"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="white"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h8m-8 6h16"
+            />
+          </svg>
+        </label>
       </div>
     </div>
   );
