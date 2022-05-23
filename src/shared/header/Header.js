@@ -42,14 +42,21 @@ const Header = () => {
               </Link>
             </li>
             {user ? (
-              <li>
-                <span
-                  className=" text-2xl lg:text-white"
-                  onClick={() => signOut(auth)}
-                >
-                  Log Out
-                </span>
-              </li>
+              <>
+                <li>
+                  <span
+                    className=" text-2xl lg:text-white"
+                    onClick={() => signOut(auth)}
+                  >
+                    Log Out
+                  </span>
+                </li>
+                <li>
+                  <span className=" text-2xl lg:text-white">
+                    {user?.displayName}
+                  </span>
+                </li>
+              </>
             ) : (
               <li>
                 <Link to="/login" className=" text-2xl lg:text-white">
@@ -75,14 +82,21 @@ const Header = () => {
             </Link>
           </li>
           {user ? (
-            <li>
-              <span
-                className=" text-2xl lg:text-white"
-                onClick={() => signOut(auth)}
-              >
-                Log Out
-              </span>
-            </li>
+            <>
+              <li>
+                <span
+                  className=" text-2xl lg:text-white"
+                  onClick={() => signOut(auth)}
+                >
+                  Log Out
+                </span>
+              </li>
+              <li>
+                <span className=" text-2xl lg:text-white">
+                  {user?.displayName}
+                </span>
+              </li>
+            </>
           ) : (
             <li>
               <Link to="/login" className=" text-2xl lg:text-white">

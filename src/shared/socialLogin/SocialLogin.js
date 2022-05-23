@@ -19,6 +19,7 @@ const SocialLogin = () => {
         <img src="images/google.png" className="w-[2rem] mr-4" alt="" />
         <span className="text-lg">continue with google</span>
       </div>
+      {error?.message && <span className="text-red-500">{error?.message}</span>}
       <div class="divider">Or</div>
     </div>
   );
