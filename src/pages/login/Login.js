@@ -6,7 +6,7 @@ import {
 import { useForm } from "react-hook-form";
 import auth from "../../firebase/Firebase.int";
 import SocialLogin from "../../shared/socialLogin/SocialLogin";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 const Login = () => {
   const {
@@ -22,8 +22,13 @@ const Login = () => {
   // password reset email
   const [sendPasswordResetEmail, sending, passwordResetError] =
     useSendPasswordResetEmail(auth);
-
   const [email, setEmail] = useState("");
+  let navigate = useNavigate();
+  let location = useLocation();
+  let from = location.state?.from?.pathname || "/";
+  if (user) {
+    navigate(from, { replace: true });
+  }
 
   const onSubmit = (data) => {
     signInWithEmailAndPassword(data.email, data.password);
