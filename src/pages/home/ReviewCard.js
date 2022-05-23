@@ -17,9 +17,10 @@ const ReviewCard = ({ review }) => {
       <div className="px-8 ">
         {stars.length > 0 &&
           stars.length < 6 &&
-          stars?.map((r, index) => {
+          stars?.map((r) => {
             return (
               <FontAwesomeIcon
+                key={r}
                 icon={faStar}
                 className="text-yellow-400 mr-2 text-lg"
               />

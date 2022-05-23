@@ -1,7 +1,11 @@
+import { signOut } from "firebase/auth";
 import React from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
 import { Link } from "react-router-dom";
+import auth from "../../firebase/Firebase.int";
 
 const Header = () => {
+  const [user] = useAuthState(auth);
   return (
     <div class="navbar bg-black">
       <div class="navbar-start">
@@ -36,6 +40,27 @@ const Header = () => {
                 Purchase
               </Link>
             </li>
+            <li>
+              <Link to="/registar" className=" text-2xl lg:text-white">
+                Registar
+              </Link>
+            </li>
+            {user ? (
+              <li>
+                <span
+                  className=" text-2xl lg:text-white"
+                  onClick={() => signOut(auth)}
+                >
+                  Log Out
+                </span>
+              </li>
+            ) : (
+              <li>
+                <Link to="/login" className=" text-2xl lg:text-white">
+                  Login
+                </Link>
+              </li>
+            )}
           </ul>
         </div>
         <img src="images/woodstore.png" alt="" />
@@ -52,6 +77,27 @@ const Header = () => {
               Purchase
             </Link>
           </li>
+          <li>
+            <Link to="/registar" className=" text-2xl lg:text-white">
+              Registar
+            </Link>
+          </li>
+          {user ? (
+            <li>
+              <span
+                className=" text-2xl lg:text-white"
+                onClick={() => signOut(auth)}
+              >
+                Log Out
+              </span>
+            </li>
+          ) : (
+            <li>
+              <Link to="/login" className=" text-2xl lg:text-white">
+                Login
+              </Link>
+            </li>
+          )}
         </ul>
       </div>
     </div>
