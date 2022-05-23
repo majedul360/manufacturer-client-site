@@ -2,7 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 
 const ToolCard = ({ product }) => {
-  const { name, img, price, minOrder, available, desc } = product;
+  const { _id, name, img, price, minOrder, available, desc } = product;
   const navigate = useNavigate();
   return (
     <div class="card  bg-base-100 shadow-xl">
