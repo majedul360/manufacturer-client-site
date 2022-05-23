@@ -1,5 +1,8 @@
 import React from "react";
+import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
+import auth from "../../firebase/Firebase.int";
 import SocialLogin from "../../shared/socialLogin/SocialLogin";
 
 const Registar = () => {
@@ -8,7 +11,17 @@ const Registar = () => {
     handleSubmit,
     formState: { errors },
   } = useForm();
-  const onSubmit = (data) => console.log(data);
+  // create user with email password
+  const [createUserWithEmailAndPassword, user, loading, error] =
+    useCreateUserWithEmailAndPassword(auth);
+
+  const navigate = useNavigate();
+  if (user) {
+    navigate("/");
+  }
+  const onSubmit = (data) => {
+    createUserWithEmailAndPassword(data.email, data.password);
+  };
   return (
     <div className="flex items-center justify-center h-[40rem]">
       <div>
@@ -61,6 +74,9 @@ const Registar = () => {
               <span className="text-red-500">
                 Please enter minimum 6 characters password
               </span>
+            )}
+            {error?.message && (
+              <span className="text-red-500">{error?.message}</span>
             )}
 
             <input type="submit" value="Registar" className="btn w-full mt-2" />
