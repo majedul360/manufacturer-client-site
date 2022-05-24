@@ -9,7 +9,7 @@ const ReviewCard = ({ review }) => {
       <div className="flex items-center gap-8 px-20">
         <img src={img} alt="" className="w-[5rem] h-[5rem] rounded-full" />
         <div>
-          <h3 className="text-lg">{name}</h3>
+          <h3 className="text-lg capitalize">{name}</h3>
           <h2 className="capitalize">{country}</h2>
         </div>
       </div>
