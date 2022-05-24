@@ -91,11 +91,12 @@ const Blogs = () => {
         name?
       </h3>
       <p className="text-lg my-4">
-        I will create API in server that will recieve each product name then
-        find in productCollection by product name and will convert them an arry
-        and send the result. At the min time I will use fetch method in UI for
-        requisting in API by product name and receiving products. Thus I will
-        implement a search to find products by name.
+        If I have an arry of products and if I want to implement a search to
+        find products by name then I will use arry.filter() method to find
+        products by name. I will take search field value then I will check that
+        search field value includes in arry of element or not includes in arry
+        of element if search field value includes in arry of element I will get
+        arry of products on the other hand I will get empty arry.
       </p>
       <h3 className="text-2xl font-bold">
         What is a unit test? Why should write unit tests?
