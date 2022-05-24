@@ -11,6 +11,7 @@ import MyOrders from "./pages/dashboard/MyOrders";
 import AddReview from "./pages/dashboard/AddReview";
 import MyProfile from "./pages/dashboard/MyProfile";
 import Blogs from "./pages/blogs/Blogs";
+import NotFound from "./pages/notFound/NotFound";
 function App() {
   return (
     <div>
@@ -33,6 +34,7 @@ function App() {
         <Route path="/blogs" element={<Blogs />} />
         <Route path="/registar" element={<Registar />} />
         <Route path="/login" element={<Login />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </div>
   );
