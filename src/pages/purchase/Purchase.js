@@ -3,7 +3,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
-import { useQuery } from "react-query";
 import { useParams } from "react-router-dom";
 import auth from "../../firebase/Firebase.int";
 
@@ -42,7 +41,6 @@ const Purchase = () => {
       produtCode: product?._id,
     };
 
-    console.log(bookingProduct);
     fetch("http://localhost:5000/purchase", {
       method: "POST",
       headers: { "content-type": "application/json" },
