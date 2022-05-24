@@ -7,7 +7,7 @@ import auth from "../../firebase/Firebase.int";
 const Header = () => {
   const [user] = useAuthState(auth);
   return (
-    <div class="navbar bg-black sticky top-0 z-10">
+    <div class="navbar bg-black sticky top-0 z-10 px-4 md:px-12 lg:px-16">
       <div class="navbar-start">
         <div class="dropdown">
           <label tabindex="0" class="btn btn-ghost lg:hidden">
@@ -33,6 +33,11 @@ const Header = () => {
             <li>
               <Link to="/" className=" text-2xl lg:text-white">
                 Home
+              </Link>
+            </li>
+            <li>
+              <Link to="/portfolio" className=" text-2xl lg:text-white">
+                My Portfolio
               </Link>
             </li>
             <li>
@@ -77,7 +82,7 @@ const Header = () => {
             )}
           </ul>
         </div>
-        <img src="images/woodstore.png" alt="" />
+        <img src="images/woodstore.png" alt="" className="w-[10rem]" />
       </div>
       <div class="navbar-center hidden lg:flex">
         <ul class="menu menu-horizontal p-0">
@@ -86,7 +91,11 @@ const Header = () => {
               Home
             </Link>
           </li>
-
+          <li>
+            <Link to="/portfolio" className=" text-2xl lg:text-white">
+              My Portfolio
+            </Link>
+          </li>
           <li>
             <Link to="/blogs" className=" text-2xl lg:text-white">
               Blogs

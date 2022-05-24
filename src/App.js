@@ -12,6 +12,7 @@ import AddReview from "./pages/dashboard/AddReview";
 import MyProfile from "./pages/dashboard/MyProfile";
 import Blogs from "./pages/blogs/Blogs";
 import NotFound from "./pages/notFound/NotFound";
+import MyPortfolio from "./pages/myPortfolio/MyPortfolio";
 function App() {
   return (
     <div>
@@ -31,6 +32,7 @@ function App() {
           <Route path="add-review" element={<AddReview />} />
           <Route path="my-profile" element={<MyProfile />} />
         </Route>
+        <Route path="/portfolio" element={<MyPortfolio />} />
         <Route path="/blogs" element={<Blogs />} />
         <Route path="/registar" element={<Registar />} />
         <Route path="/login" element={<Login />} />
