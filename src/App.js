@@ -25,7 +25,7 @@ function App() {
           }
         />
         <Route path="/dashboard" element={<Dashboard />}>
-          <Route path="my-orders" element={<MyOrders />} />
+          <Route index element={<MyOrders />} />
           <Route path="add-review" element={<AddReview />} />
           <Route path="my-profile" element={<MyProfile />} />
         </Route>

@@ -39,6 +39,7 @@ const Purchase = () => {
       quantity,
       price,
       product: name,
+      produtCode: product?._id,
     };
 
     console.log(bookingProduct);
@@ -132,20 +133,25 @@ const Purchase = () => {
             <br />
 
             <input
-              {...register("phone")}
+              {...register("phone", { required: true })}
               type="number"
               placeholder="Enter your phone number"
               class="input w-full input-bordered my-2"
             />
             <br />
+            {errors.phone?.type === "required" && (
+              <span className="text-red-500">Required</span>
+            )}
             <input
-              {...register("address")}
+              {...register("address", { required: true })}
               type="text"
               placeholder="Enter your address"
               class="input w-full input-bordered my-2"
             />
             <br />
-
+            {errors.address?.type === "required" && (
+              <span className="text-red-500">Required</span>
+            )}
             <input
               type="submit"
               value="Purchase"
