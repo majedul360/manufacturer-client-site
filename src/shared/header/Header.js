@@ -35,7 +35,18 @@ const Header = () => {
                 Home
               </Link>
             </li>
-
+            <li>
+              <Link to="/blogs" className=" text-2xl lg:text-white">
+                Blogs
+              </Link>
+            </li>
+            {user && (
+              <li>
+                <Link to="/dashboard" className=" text-2xl lg:text-white">
+                  Dashboard
+                </Link>
+              </li>
+            )}
             <li>
               <Link to="/registar" className=" text-2xl lg:text-white">
                 Registar
@@ -77,17 +88,25 @@ const Header = () => {
           </li>
 
           <li>
+            <Link to="/blogs" className=" text-2xl lg:text-white">
+              Blogs
+            </Link>
+          </li>
+          {user && (
+            <li>
+              <Link to="/dashboard" className=" text-2xl lg:text-white">
+                Dashboard
+              </Link>
+            </li>
+          )}
+          <li>
             <Link to="/registar" className=" text-2xl lg:text-white">
               Registar
             </Link>
           </li>
+
           {user ? (
             <>
-              <li>
-                <Link to="/dashboard" className=" text-2xl lg:text-white">
-                  Dashboard
-                </Link>
-              </li>
               <li>
                 <span
                   className=" text-2xl lg:text-white"
