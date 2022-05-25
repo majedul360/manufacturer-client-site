@@ -17,6 +17,7 @@ import MakeAdmin from "./pages/dashboard/MakeAdmin";
 import RequireAdmin from "./requireAdmin/RequireAdmin";
 import AddProduct from "./pages/dashboard/AddProduct";
 import Payment from "./payment/Payment";
+import ManageAllOrders from "./pages/dashboard/manageAllOrders/ManageAllOrders";
 function App() {
   return (
     <div>
@@ -55,6 +56,14 @@ function App() {
             element={
               <RequireAdmin>
                 <AddProduct />
+              </RequireAdmin>
+            }
+          />
+          <Route
+            path="manageAllOrders"
+            element={
+              <RequireAdmin>
+                <ManageAllOrders />
               </RequireAdmin>
             }
           />
