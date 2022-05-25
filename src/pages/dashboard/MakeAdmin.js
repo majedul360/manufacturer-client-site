@@ -7,6 +7,7 @@ const MakeAdmin = () => {
     isLoading,
     error,
     data: users,
+    refetch,
   } = useQuery("users", () =>
     fetch("http://localhost:5000/users", {
       headers: {
@@ -28,7 +29,12 @@ const MakeAdmin = () => {
         </thead>
         <tbody>
           {users?.map((user, index) => (
-            <MakeAdminRow key={users._id} index={index} user={user} />
+            <MakeAdminRow
+              key={users._id}
+              index={index}
+              user={user}
+              refetch={refetch}
+            />
           ))}
         </tbody>
       </table>

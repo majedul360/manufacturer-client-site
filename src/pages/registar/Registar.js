@@ -5,6 +5,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import useToken from "../../customHooks/CustomHooks";
 import auth from "../../firebase/Firebase.int";
 import SocialLogin from "../../shared/socialLogin/SocialLogin";
+import { useUpdateProfile } from "react-firebase-hooks/auth";
 
 const Registar = () => {
   const {
@@ -15,10 +16,17 @@ const Registar = () => {
   // create user with email password
   const [createUserWithEmailAndPassword, user, loading, error] =
     useCreateUserWithEmailAndPassword(auth);
-  const { token } = useToken(user);
+  const [updateProfile, updating, updateProfileError] = useUpdateProfile(auth);
 
-  const onSubmit = (data) => {
-    createUserWithEmailAndPassword(data.email, data.password);
+  const { token } = useToken(user);
+  const navigate = useNavigate();
+  if (token) {
+    navigate("/");
+  }
+
+  const onSubmit = async (data) => {
+    await createUserWithEmailAndPassword(data.email, data.password);
+    await updateProfile({ displayName: data.name });
   };
   return (
     <div className="flex items-center justify-center h-[40rem]">

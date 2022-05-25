@@ -9,8 +9,8 @@ const SocialLogin = () => {
   let location = useLocation();
   let from = location.state?.from?.pathname || "/";
   const { token } = useToken(user);
-  console.log(token);
-  if (user) {
+
+  if (token) {
     navigate(from, { replace: true });
   }
   return (
