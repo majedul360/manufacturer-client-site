@@ -42,6 +42,11 @@ const Dashboard = () => {
                   Make Admin
                 </Link>
               </li>
+              <li>
+                <Link to="/dashboard/addProduct" className="text-lg">
+                  Add a Product
+                </Link>
+              </li>
             </>
           )}
         </ul>
