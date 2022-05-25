@@ -2,6 +2,7 @@ import React from "react";
 import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import useToken from "../../customHooks/CustomHooks";
 import auth from "../../firebase/Firebase.int";
 import SocialLogin from "../../shared/socialLogin/SocialLogin";
 
@@ -14,6 +15,7 @@ const Registar = () => {
   // create user with email password
   const [createUserWithEmailAndPassword, user, loading, error] =
     useCreateUserWithEmailAndPassword(auth);
+  const { token } = useToken(user);
 
   const onSubmit = (data) => {
     createUserWithEmailAndPassword(data.email, data.password);

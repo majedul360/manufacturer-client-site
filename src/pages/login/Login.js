@@ -7,6 +7,7 @@ import { useForm } from "react-hook-form";
 import auth from "../../firebase/Firebase.int";
 import SocialLogin from "../../shared/socialLogin/SocialLogin";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import useToken from "../../customHooks/CustomHooks";
 
 const Login = () => {
   const {
@@ -26,6 +27,7 @@ const Login = () => {
   let navigate = useNavigate();
   let location = useLocation();
   let from = location.state?.from?.pathname || "/";
+  const { token } = useToken(user);
   if (user) {
     navigate(from, { replace: true });
   }

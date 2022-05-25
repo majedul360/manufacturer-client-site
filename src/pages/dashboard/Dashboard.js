@@ -26,6 +26,11 @@ const Dashboard = () => {
               My Profile
             </Link>
           </li>
+          <li>
+            <Link to="/dashboard/makeAdmin" className="text-lg">
+              Make Admin
+            </Link>
+          </li>
         </ul>
       </div>
     </div>
