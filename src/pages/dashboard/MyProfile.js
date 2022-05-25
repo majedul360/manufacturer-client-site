@@ -23,7 +23,7 @@ const MyProfile = () => {
       phone: data.phone,
       link: data.link,
     };
-    fetch("http://localhost:5000/myProfile", {
+    fetch("https://wood-store.herokuapp.com/myProfile", {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(profileData),

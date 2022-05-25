@@ -6,7 +6,7 @@ import CheckOutForm from "../components/checkoutForm/CheckoutForm";
 const Payment = () => {
   const { id } = useParams();
   const { isLoading, error, data } = useQuery(["order", id], () =>
-    fetch(`http://localhost:5000/order/${id}`, {
+    fetch(`https://wood-store.herokuapp.com/order/${id}`, {
       headers: {
         "content-type": "application/json",
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,

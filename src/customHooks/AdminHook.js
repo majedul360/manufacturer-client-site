@@ -2,11 +2,12 @@ import { useEffect, useState } from "react";
 
 const useAdmin = (user) => {
   const email = user?.email;
+  console.log(email);
   const [admin, setAdmin] = useState(false);
   const [adminLoading, setAdminLoading] = useState(true);
   useEffect(() => {
     if (email) {
-      fetch(`http://localhost:5000/admin/${email}`, {
+      fetch(`https://wood-store.herokuapp.com/admin/${email}`, {
         method: "GET",
         headers: {
           "content-type": "application/json",
@@ -15,6 +16,7 @@ const useAdmin = (user) => {
       })
         .then((res) => res.json())
         .then((result) => {
+          console.log(result);
           setAdmin(result);
           setAdminLoading(false);
         });

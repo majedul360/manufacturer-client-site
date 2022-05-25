@@ -21,7 +21,7 @@ const Purchase = () => {
   } = useForm();
 
   useEffect(() => {
-    fetch(`http://localhost:5000/product/${id}`)
+    fetch(`https://wood-store.herokuapp.com/product/${id}`)
       .then((res) => res.json())
       .then((data) => {
         setProduct(data);
@@ -41,7 +41,7 @@ const Purchase = () => {
       produtCode: product?._id,
     };
 
-    fetch("http://localhost:5000/purchase", {
+    fetch("https://wood-store.herokuapp.com/purchase", {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(bookingProduct),

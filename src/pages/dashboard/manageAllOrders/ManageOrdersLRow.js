@@ -12,7 +12,7 @@ const ManageOrdersLRow = ({
   const { _id, product, price, paid, status } = order;
 
   const changeStatus = (id) => {
-    fetch(`http://localhost:5000/changeStatus/${id}`, {
+    fetch(`https://wood-store.herokuapp.com/changeStatus/${id}`, {
       method: "PATCH",
       headers: {
         "content-type": "application/json",
@@ -31,13 +31,15 @@ const ManageOrdersLRow = ({
       <td>{product}</td>
       <td>${price}</td>
       <td>
-        <label
-          for="cancel-order"
-          class="btn bg-red-500 hover:bg-red-500"
-          onClick={() => setCancelOrder(true, setProductId(_id))}
-        >
-          Cancel Order
-        </label>
+        {!paid && (
+          <label
+            for="cancel-order"
+            class="btn bg-red-500 hover:bg-red-500"
+            onClick={() => setCancelOrder(true, setProductId(_id))}
+          >
+            Cancel Order
+          </label>
+        )}
       </td>
       <td className="text-xl">
         {paid ? (

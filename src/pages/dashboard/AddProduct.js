@@ -31,7 +31,7 @@ const AddProduct = () => {
             img: result.data.url,
           };
 
-          fetch("http://localhost:5000/products", {
+          fetch("https://wood-store.herokuapp.com/products", {
             method: "POST",
             headers: {
               "content-type": "application/json",
