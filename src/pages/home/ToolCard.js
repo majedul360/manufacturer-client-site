@@ -12,7 +12,10 @@ const ToolCard = ({ product }) => {
       <div class="card-body">
         <h2 class="card-title">{name}</h2>
         <h3 className="text-2xl">
-          ${price.includes(".00") ? price : `${price}.00`}
+          $
+          {price.includes(".00")
+            ? `${price} per piece`
+            : `${price}.00 per piece`}
         </h3>
         <h5 className="text-lg">Minimum Order: {minOrder} pieces</h5>
         <h4 className="text-lg">Available: {available} pieces</h4>

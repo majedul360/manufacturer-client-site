@@ -15,9 +15,13 @@ const MyOrders = () => {
     data: orders,
     refetch,
   } = useQuery("orders", () =>
-    fetch(`http://localhost:5000/orders/${user?.email}`).then((res) =>
-      res.json()
-    )
+    fetch(`http://localhost:5000/orders/${user?.email}`, {
+      method: "GET",
+      headers: {
+        "content-type": "application/json",
+        authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+      },
+    }).then((res) => res.json())
   );
 
   return (
@@ -32,6 +36,7 @@ const MyOrders = () => {
             <th>Price</th>
             <th>Cancel Order</th>
             <th>Payment</th>
+            <th>Transaction Id</th>
           </tr>
         </thead>
         <tbody>

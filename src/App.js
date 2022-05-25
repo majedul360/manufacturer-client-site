@@ -16,6 +16,7 @@ import MyPortfolio from "./pages/myPortfolio/MyPortfolio";
 import MakeAdmin from "./pages/dashboard/MakeAdmin";
 import RequireAdmin from "./requireAdmin/RequireAdmin";
 import AddProduct from "./pages/dashboard/AddProduct";
+import Payment from "./payment/Payment";
 function App() {
   return (
     <div>
@@ -57,6 +58,7 @@ function App() {
               </RequireAdmin>
             }
           />
+          <Route path="payment/:id" element={<Payment />} />
         </Route>
         <Route path="/portfolio" element={<MyPortfolio />} />
         <Route path="/blogs" element={<Blogs />} />
