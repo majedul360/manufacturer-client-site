@@ -21,7 +21,7 @@ const UpdateProfileModal = ({ setModalOpen }) => {
       link: data.link,
     };
     fetch(`http://localhost:5000/updateProfile/${user?.email}`, {
-      method: "PATCH",
+      method: "PUT",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(updatedProfile),
     })

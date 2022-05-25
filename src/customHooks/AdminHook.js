@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 const useAdmin = (user) => {
   const email = user?.email;
   const [admin, setAdmin] = useState(false);
+  const [adminLoading, setAdminLoading] = useState(true);
   useEffect(() => {
     if (email) {
       fetch(`http://localhost:5000/admin/${email}`, {
@@ -13,9 +14,12 @@ const useAdmin = (user) => {
         },
       })
         .then((res) => res.json())
-        .then((result) => setAdmin(result));
+        .then((result) => {
+          setAdmin(result);
+          setAdminLoading(false);
+        });
     }
   }, [user]);
-  return [admin];
+  return [admin, adminLoading];
 };
 export default useAdmin;

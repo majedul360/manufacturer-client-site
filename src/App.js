@@ -14,6 +14,7 @@ import Blogs from "./pages/blogs/Blogs";
 import NotFound from "./pages/notFound/NotFound";
 import MyPortfolio from "./pages/myPortfolio/MyPortfolio";
 import MakeAdmin from "./pages/dashboard/MakeAdmin";
+import RequireAdmin from "./requireAdmin/RequireAdmin";
 function App() {
   return (
     <div>
@@ -32,7 +33,14 @@ function App() {
           <Route index element={<MyOrders />} />
           <Route path="add-review" element={<AddReview />} />
           <Route path="my-profile" element={<MyProfile />} />
-          <Route path="makeAdmin" element={<MakeAdmin />} />
+          <Route
+            path="makeAdmin"
+            element={
+              <RequireAdmin>
+                <MakeAdmin />
+              </RequireAdmin>
+            }
+          />
         </Route>
         <Route path="/portfolio" element={<MyPortfolio />} />
         <Route path="/blogs" element={<Blogs />} />
