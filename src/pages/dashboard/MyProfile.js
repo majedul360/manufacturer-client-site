@@ -35,20 +35,20 @@ const MyProfile = () => {
   };
 
   return (
-    <div class="hero ">
-      <div class="hero-content text-center">
+    <div className="hero ">
+      <div className="hero-content text-center">
         <div>
           <h3 className="text-xl">Name: {user?.displayName}</h3>
           <h3 className="text-lg mt-4">Email: {user?.email}</h3>
 
-          <div class="card max-w-[40rem] md:w-[35rem] mx-auto bg-base-100 shadow-xl mt-8">
-            <div class="card-body">
+          <div className="card max-w-[40rem] md:w-[35rem] mx-auto bg-base-100 shadow-xl mt-8">
+            <div className="card-body">
               <form onSubmit={handleSubmit(onSubmit)}>
                 <input
                   {...register("education", { required: true })}
                   type="text"
                   placeholder="Enter your educational quality"
-                  class="input w-full input-bordered my-2"
+                  className="input w-full input-bordered my-2"
                 />
                 <br />
                 {errors.education?.type === "required" && (
@@ -58,7 +58,7 @@ const MyProfile = () => {
                   {...register("loaction", { required: true })}
                   type="text"
                   placeholder="Enter your loaction city/district"
-                  class="input w-full input-bordered my-2"
+                  className="input w-full input-bordered my-2"
                 />
                 <br />
                 {errors.loaction?.type === "required" && (
@@ -68,7 +68,7 @@ const MyProfile = () => {
                   {...register("phone", { required: true })}
                   type="number"
                   placeholder="Enter your phone number"
-                  class="input w-full input-bordered my-2"
+                  className="input w-full input-bordered my-2"
                 />
                 <br />
                 {errors.phone?.type === "required" && (
@@ -78,7 +78,7 @@ const MyProfile = () => {
                   {...register("link", { required: true })}
                   type="text"
                   placeholder="Enter your linkedin profail link"
-                  class="input w-full input-bordered my-2"
+                  className="input w-full input-bordered my-2"
                 />
                 <br />
                 {errors.link?.type === "required" && (
@@ -91,7 +91,7 @@ const MyProfile = () => {
                   className="btn  mt-2 md:mr-8"
                 />
                 <label
-                  for="update-profile-modal"
+                  htmlFor="update-profile-modal"
                   className="btn  mt-2 bg-accent text-black hover:bg-accent"
                   onClick={() => setModalOpen(true)}
                 >

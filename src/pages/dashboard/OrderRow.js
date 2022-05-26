@@ -12,8 +12,8 @@ const OrderRow = ({ order, user, index, setCancelOrder, setProductId }) => {
       <td>{price}</td>
       <td>
         <label
-          for="cancel-order"
-          class="btn bg-red-500 hover:bg-red-500"
+          htmlFor="cancel-order"
+          className="btn bg-red-500 hover:bg-red-500"
           onClick={() => setCancelOrder(true, setProductId(_id))}
         >
           Cancel Order

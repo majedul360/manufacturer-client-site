@@ -49,14 +49,14 @@ const AddProduct = () => {
   };
   return (
     <div>
-      <div class="card max-w-[40rem] mx-auto bg-base-100 shadow-xl mt-8">
-        <div class="card-body">
+      <div className="card max-w-[40rem] mx-auto bg-base-100 shadow-xl mt-8">
+        <div className="card-body">
           <form onSubmit={handleSubmit(onSubmit)}>
             <input
               {...register("name", { required: true })}
               type="text"
               placeholder="Enter product name"
-              class="input w-full input-bordered my-2"
+              className="input w-full input-bordered my-2"
             />
             <br />
             {errors.name?.type === "required" && (
@@ -66,7 +66,7 @@ const AddProduct = () => {
               {...register("price", { required: true })}
               type="number"
               placeholder="Enter price"
-              class="input w-full input-bordered my-2"
+              className="input w-full input-bordered my-2"
             />
             <br />
             {errors.price?.type === "required" && (
@@ -76,7 +76,7 @@ const AddProduct = () => {
               {...register("minOrder", { required: true })}
               type="number"
               placeholder="Enter minimum order number"
-              class="input w-full input-bordered my-2"
+              className="input w-full input-bordered my-2"
             />
             <br />
             {errors.minOrder?.type === "required" && (
@@ -87,7 +87,7 @@ const AddProduct = () => {
               {...register("available", { required: true })}
               type="number"
               placeholder="Enter available products number"
-              class="input w-full input-bordered my-2"
+              className="input w-full input-bordered my-2"
             />
             <br />
             {errors.available?.type === "required" && (
@@ -99,7 +99,7 @@ const AddProduct = () => {
               {...register("description", { required: true })}
               type="text"
               placeholder="Enter products description"
-              class="input w-full input-bordered my-2 h-[10rem]"
+              className="input w-full input-bordered my-2 h-[10rem]"
             ></textarea>
             <br />
             {errors.description?.type === "required" && (
@@ -108,7 +108,7 @@ const AddProduct = () => {
             <input
               {...register("img", { required: true })}
               type="file"
-              class="input w-full  my-2"
+              className="input w-full  my-2"
             />
             <br />
             {errors.img?.type === "required" && (

@@ -39,7 +39,7 @@ const Login = () => {
     <div className="flex items-center justify-center h-[40rem]">
       <div>
         <SocialLogin />
-        <div class="card w-96 bg-base-100 shadow-xl  p-4">
+        <div className="card w-96 bg-base-100 shadow-xl  p-4">
           <h3 className="text-3xl mb-4 text-center">Login</h3>
           <form onSubmit={handleSubmit(onSubmit)}>
             <input
@@ -49,7 +49,7 @@ const Login = () => {
               })}
               type="email"
               placeholder="Enter your email"
-              class="input w-full input-bordered my-2"
+              className="input w-full input-bordered my-2"
               onChange={(e) => setEmail(e.target.value)}
             />
             <br />
@@ -67,7 +67,7 @@ const Login = () => {
               })}
               type="password"
               placeholder="Enter your password"
-              class="input w-full input-bordered my-2"
+              className="input w-full input-bordered my-2"
             />
             <br />
             {errors.password?.type === "required" && (

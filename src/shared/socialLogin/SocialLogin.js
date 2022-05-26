@@ -23,7 +23,7 @@ const SocialLogin = () => {
         <span className="text-lg">continue with google</span>
       </div>
       {error?.message && <span className="text-red-500">{error?.message}</span>}
-      <div class="divider">Or</div>
+      <div className="divider">Or</div>
     </div>
   );
 };

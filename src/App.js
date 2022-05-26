@@ -18,6 +18,7 @@ import RequireAdmin from "./requireAdmin/RequireAdmin";
 import AddProduct from "./pages/dashboard/AddProduct";
 import Payment from "./payment/Payment";
 import ManageAllOrders from "./pages/dashboard/manageAllOrders/ManageAllOrders";
+import ManageProducts from "./pages/dashboard/ManageProducts";
 function App() {
   return (
     <div>
@@ -64,6 +65,14 @@ function App() {
             element={
               <RequireAdmin>
                 <ManageAllOrders />
+              </RequireAdmin>
+            }
+          />
+          <Route
+            path="manageProducts"
+            element={
+              <RequireAdmin>
+                <ManageProducts />
               </RequireAdmin>
             }
           />

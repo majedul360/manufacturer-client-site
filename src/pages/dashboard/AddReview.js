@@ -56,14 +56,14 @@ const AddReview = () => {
 
   return (
     <div>
-      <div class="card max-w-[40rem] mx-auto bg-base-100 shadow-xl mt-8">
-        <div class="card-body">
+      <div className="card max-w-[40rem] mx-auto bg-base-100 shadow-xl mt-8">
+        <div className="card-body">
           <form onSubmit={handleSubmit(onSubmit)}>
             <input
               {...register("name", { required: true })}
               type="text"
               placeholder="Enter your name"
-              class="input w-full input-bordered my-2"
+              className="input w-full input-bordered my-2"
             />
             <br />
             {errors.name?.type === "required" && (
@@ -73,7 +73,7 @@ const AddReview = () => {
               {...register("country", { required: true })}
               type="text"
               placeholder="Enter your country name"
-              class="input w-full input-bordered my-2"
+              className="input w-full input-bordered my-2"
             />
             <br />
             {errors.country?.type === "required" && (
@@ -83,7 +83,7 @@ const AddReview = () => {
               {...register("rating", { required: true })}
               type="number"
               placeholder="Enter your rating"
-              class="input w-full input-bordered my-2"
+              className="input w-full input-bordered my-2"
             />
             <br />
             {errors.rating?.type === "required" && (
@@ -95,7 +95,7 @@ const AddReview = () => {
               {...register("description", { required: true })}
               type="text"
               placeholder="Enter your description"
-              class="input w-full input-bordered my-2 h-[10rem]"
+              className="input w-full input-bordered my-2 h-[10rem]"
             ></textarea>
             <br />
             {errors.description?.type === "required" && (
@@ -104,7 +104,7 @@ const AddReview = () => {
             <input
               {...register("img", { required: true })}
               type="file"
-              class="input w-full  my-2"
+              className="input w-full  my-2"
             />
             <br />
             {errors.img?.type === "required" && (

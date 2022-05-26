@@ -7,16 +7,15 @@ import auth from "../../firebase/Firebase.int";
 const Dashboard = () => {
   const [user] = useAuthState(auth);
   const [admin] = useAdmin(user);
-  console.log(admin);
   return (
-    <div class="drawer drawer-mobile mt-4">
-      <input id="dashboard" type="checkbox" class="drawer-toggle" />
-      <div class="drawer-content mt-4 px-8">
+    <div className="drawer drawer-mobile mt-4">
+      <input id="dashboard" type="checkbox" className="drawer-toggle" />
+      <div className="drawer-content mt-4 px-8">
         <Outlet />
       </div>
-      <div class="drawer-side">
-        <label for="dashboard" class="drawer-overlay"></label>
-        <ul class="menu p-4 overflow-y-auto w-80 text-base-content">
+      <div className="drawer-side">
+        <label htmlFor="dashboard" className="drawer-overlay"></label>
+        <ul className="menu p-4 overflow-y-auto w-80 text-base-content">
           {!admin && (
             <>
               <li>
@@ -51,6 +50,11 @@ const Dashboard = () => {
               <li>
                 <Link to="/dashboard/manageAllOrders" className="text-lg">
                   Manage All Orders
+                </Link>
+              </li>
+              <li>
+                <Link to="/dashboard/manageProducts" className="text-lg">
+                  Manage Products
                 </Link>
               </li>
             </>

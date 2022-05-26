@@ -33,16 +33,20 @@ const UpdateProfileModal = ({ setModalOpen }) => {
   };
   return (
     <div>
-      <input type="checkbox" id="update-profile-modal" class="modal-toggle" />
-      <div class="modal">
-        <div class="modal-box">
-          <div class="card-body">
+      <input
+        type="checkbox"
+        id="update-profile-modal"
+        className="modal-toggle"
+      />
+      <div className="modal">
+        <div className="modal-box">
+          <div className="card-body">
             <form onSubmit={handleSubmit(onSubmit)}>
               <input
                 disabled
                 type="text"
                 value={user?.displayName}
-                class="input w-full input-bordered my-2"
+                className="input w-full input-bordered my-2"
               />
               <br />
 
@@ -50,7 +54,7 @@ const UpdateProfileModal = ({ setModalOpen }) => {
                 type="email"
                 disabled
                 value={user?.email}
-                class="input w-full input-bordered my-2"
+                className="input w-full input-bordered my-2"
               />
               <br />
 
@@ -58,7 +62,7 @@ const UpdateProfileModal = ({ setModalOpen }) => {
                 {...register("education", { required: true })}
                 type="text"
                 placeholder="Enter your educational quality"
-                class="input w-full input-bordered my-2"
+                className="input w-full input-bordered my-2"
               />
               <br />
               {errors.education?.type === "required" && (
@@ -68,7 +72,7 @@ const UpdateProfileModal = ({ setModalOpen }) => {
                 {...register("loaction", { required: true })}
                 type="text"
                 placeholder="Enter your loaction city/district"
-                class="input w-full input-bordered my-2"
+                className="input w-full input-bordered my-2"
               />
               <br />
               {errors.loaction?.type === "required" && (
@@ -78,7 +82,7 @@ const UpdateProfileModal = ({ setModalOpen }) => {
                 {...register("phone", { required: true })}
                 type="number"
                 placeholder="Enter your phone number"
-                class="input w-full input-bordered my-2"
+                className="input w-full input-bordered my-2"
               />
               <br />
               {errors.phone?.type === "required" && (
@@ -88,7 +92,7 @@ const UpdateProfileModal = ({ setModalOpen }) => {
                 {...register("link", { required: true })}
                 type="text"
                 placeholder="Enter your linkedin profail link"
-                class="input w-full input-bordered my-2"
+                className="input w-full input-bordered my-2"
               />
               <br />
               {errors.link?.type === "required" && (
@@ -97,8 +101,8 @@ const UpdateProfileModal = ({ setModalOpen }) => {
               <input type="submit" value="update" className="btn w-full mt-2" />
             </form>
           </div>
-          <div class="modal-action">
-            <label for="update-profile-modal" class="btn bg-red-500">
+          <div className="modal-action">
+            <label htmlFor="update-profile-modal" className="btn bg-red-500">
               cancel
             </label>
           </div>

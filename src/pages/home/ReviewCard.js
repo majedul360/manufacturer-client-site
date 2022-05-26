@@ -5,7 +5,7 @@ const ReviewCard = ({ review }) => {
   const { name, img, rating, desc, country } = review;
   const stars = [...Array(rating).keys()];
   return (
-    <div class="card bg-base-100 shadow-xl py-8">
+    <div className="card bg-base-100 shadow-xl py-8">
       <div className="flex items-center gap-8 px-20">
         <img src={img} alt="" className="w-[5rem] h-[5rem] rounded-full" />
         <div>

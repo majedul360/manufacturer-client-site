@@ -19,7 +19,7 @@ const MakeAdmin = () => {
   console.log(users);
   return (
     <div>
-      <table class="table w-full">
+      <table className="table w-full">
         <thead>
           <tr>
             <th></th>

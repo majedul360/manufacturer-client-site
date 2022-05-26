@@ -1,20 +1,27 @@
 import React from "react";
 
-const OrderCancelModal = ({ refetch, productId, setCancelOrder }) => {
-  const cancelOrder = () => {
-    fetch(`https://wood-store.herokuapp.com/cancelOrder/${productId}`, {
+const ProductDeleteModal = ({ refetch, productId, setIsDeleteProduct }) => {
+  const deleteProduct = () => {
+    fetch(`https://wood-store.herokuapp.com/product/${productId}`, {
       method: "DELETE",
-      headers: { "content-type": "application/json" },
+      headers: {
+        "content-type": "application/json",
+        authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+      },
     })
       .then((res) => res.json())
       .then((data) => {
-        setCancelOrder(false);
+        setIsDeleteProduct(false);
         refetch();
       });
   };
   return (
     <div>
-      <input type="checkbox" id="cancel-order" className="modal-toggle" />
+      <input
+        type="checkbox"
+        id="delete-product-modal"
+        className="modal-toggle"
+      />
       <div className="modal">
         <div className="modal-box">
           <p className="py-4 capitalize">
@@ -23,11 +30,11 @@ const OrderCancelModal = ({ refetch, productId, setCancelOrder }) => {
           <div className="modal-action">
             <label
               className="btn bg-red-500 hover:bg-red-500 mr-2"
-              onClick={cancelOrder}
+              onClick={deleteProduct}
             >
               yes
             </label>
-            <label htmlFor="cancel-order" className="btn">
+            <label htmlFor="delete-product-modal" className="btn">
               No
             </label>
           </div>
@@ -37,4 +44,4 @@ const OrderCancelModal = ({ refetch, productId, setCancelOrder }) => {
   );
 };
 
-export default OrderCancelModal;
+export default ProductDeleteModal;

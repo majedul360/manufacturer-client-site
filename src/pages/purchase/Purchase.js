@@ -61,21 +61,21 @@ const Purchase = () => {
 
   return (
     <div>
-      <div class="hero">
-        <div class="hero-content flex-col lg:flex-row gap-32">
-          <img src={img} class="max-w-sm rounded-lg shadow-2xl" />
+      <div className="hero">
+        <div className="hero-content flex-col lg:flex-row gap-32">
+          <img src={img} className="max-w-sm rounded-lg shadow-2xl" />
           <div>
-            <h1 class="text-3xl font-bold">{name}</h1>
+            <h1 className="text-3xl font-bold">{name}</h1>
             <h3 className="py-4 text-2xl">${price}</h3>
             <h3 className=" text-xl">Minimum Order: {minOrder} pieces</h3>
 
             <h3 className="py-4 text-2xl">Available: {available} pieces</h3>
 
-            <div class="form-control mb-4">
-              <label class="label">
-                <span class="label-text text-lg mb-2">Quantity:</span>
+            <div className="form-control mb-4">
+              <label className="label">
+                <span className="label-text text-lg mb-2">Quantity:</span>
               </label>
-              <label class="input-group">
+              <label className="input-group">
                 <span
                   className="cursor-pointer bg-red-500"
                   onClick={decreaseHandler}
@@ -85,7 +85,7 @@ const Purchase = () => {
                 <input
                   type="text"
                   value={quantity}
-                  class="input input-bordered text-lg max-w-[5rem]"
+                  className="input input-bordered text-lg max-w-[5rem]"
                 />
                 <span
                   className="cursor-pointer bg-cyan-500"
@@ -105,19 +105,19 @@ const Purchase = () => {
                 Quantity must be less than the available order.
               </span>
             )}
-            <p class="mt-4">{desc}</p>
+            <p className="mt-4">{desc}</p>
           </div>
         </div>
       </div>
-      <div class="card max-w-[40rem] mx-auto bg-base-100 shadow-xl mt-8">
-        <div class="card-body">
+      <div className="card max-w-[40rem] mx-auto bg-base-100 shadow-xl mt-8">
+        <div className="card-body">
           <form onSubmit={handleSubmit(onSubmit)}>
             <input
               value={user?.displayName}
               disabled
               type="text"
               placeholder="Enter your name"
-              class="input w-full input-bordered my-2"
+              className="input w-full input-bordered my-2"
             />
             <br />
 
@@ -126,7 +126,7 @@ const Purchase = () => {
               disabled
               value={user?.email}
               placeholder="Enter your email"
-              class="input w-full input-bordered my-2"
+              className="input w-full input-bordered my-2"
             />
             <br />
 
@@ -134,7 +134,7 @@ const Purchase = () => {
               {...register("phone", { required: true })}
               type="number"
               placeholder="Enter your phone number"
-              class="input w-full input-bordered my-2"
+              className="input w-full input-bordered my-2"
             />
             <br />
             {errors.phone?.type === "required" && (
@@ -144,7 +144,7 @@ const Purchase = () => {
               {...register("address", { required: true })}
               type="text"
               placeholder="Enter your address"
-              class="input w-full input-bordered my-2"
+              className="input w-full input-bordered my-2"
             />
             <br />
             {errors.address?.type === "required" && (

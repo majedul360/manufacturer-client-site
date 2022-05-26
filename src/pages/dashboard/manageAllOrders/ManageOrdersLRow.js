@@ -1,5 +1,4 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
 
 const ManageOrdersLRow = ({
   order,
@@ -33,8 +32,8 @@ const ManageOrdersLRow = ({
       <td>
         {!paid && (
           <label
-            for="cancel-order"
-            class="btn bg-red-500 hover:bg-red-500"
+            htmlFor="cancel-order"
+            className="btn bg-red-500 hover:bg-red-500"
             onClick={() => setCancelOrder(true, setProductId(_id))}
           >
             Cancel Order

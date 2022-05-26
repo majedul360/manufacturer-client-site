@@ -32,14 +32,14 @@ const Registar = () => {
     <div className="flex items-center justify-center h-[40rem]">
       <div>
         <SocialLogin />
-        <div class="card w-96 bg-base-100 shadow-xl  p-4">
+        <div className="card w-96 bg-base-100 shadow-xl  p-4">
           <h3 className="text-3xl mb-4 text-center">Registar</h3>
           <form onSubmit={handleSubmit(onSubmit)}>
             <input
               {...register("name", { required: true })}
               type="text"
               placeholder="Enter your name"
-              class="input w-full input-bordered my-2"
+              className="input w-full input-bordered my-2"
             />
             <br />
             {errors.name?.type === "required" && (
@@ -53,7 +53,7 @@ const Registar = () => {
               })}
               type="email"
               placeholder="Enter your email"
-              class="input w-full input-bordered my-2"
+              className="input w-full input-bordered my-2"
             />
             <br />
             {errors.email?.type === "required" && (
@@ -70,7 +70,7 @@ const Registar = () => {
               })}
               type="password"
               placeholder="Enter your password"
-              class="input w-full input-bordered my-2"
+              className="input w-full input-bordered my-2"
             />
             <br />
             {errors.password?.type === "required" && (
