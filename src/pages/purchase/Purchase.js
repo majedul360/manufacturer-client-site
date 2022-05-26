@@ -152,7 +152,7 @@ const Purchase = () => {
             )}
             <input
               type="submit"
-              defaultValue="Purchase"
+              value="Purchase"
               className="btn w-full mt-2"
               disabled={quantity < minOrder || quantity > available}
             />

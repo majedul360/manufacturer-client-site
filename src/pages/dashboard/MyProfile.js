@@ -87,7 +87,7 @@ const MyProfile = () => {
 
                 <input
                   type="submit"
-                  defaultValue="upload profail"
+                  value="upload profail"
                   className="btn  mt-2 md:mr-8"
                 />
                 <label

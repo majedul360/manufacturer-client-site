@@ -85,11 +85,7 @@ const Registar = () => {
               <span className="text-red-500">{error?.message}</span>
             )}
 
-            <input
-              type="submit"
-              defaultValue="Registar"
-              className="btn w-full mt-2"
-            />
+            <input type="submit" value="Registar" className="btn w-full mt-2" />
           </form>
           <p className="capitalize text-sm mt-2">
             already have an account?{" "}

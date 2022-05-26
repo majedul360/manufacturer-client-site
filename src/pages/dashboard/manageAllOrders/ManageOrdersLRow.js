@@ -8,7 +8,7 @@ const ManageOrdersLRow = ({
   setProductId,
   refetch,
 }) => {
-  const { _id, product, price, paid, status } = order;
+  const { _id, name, email, product, price, paid, status } = order;
 
   const changeStatus = (id) => {
     fetch(`https://wood-store.herokuapp.com/changeStatus/${id}`, {
@@ -25,8 +25,8 @@ const ManageOrdersLRow = ({
   return (
     <tr>
       <th>{index + 1}</th>
-      <td>{user?.displayName}</td>
-      <td>{user?.email}</td>
+      <td>{name}</td>
+      <td>{email}</td>
       <td>{product}</td>
       <td>${price}</td>
       <td>

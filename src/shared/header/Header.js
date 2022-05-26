@@ -7,7 +7,7 @@ import auth from "../../firebase/Firebase.int";
 const Header = () => {
   const [user] = useAuthState(auth);
   return (
-    <div className="navbar bg-black sticky top-0 z-10 px-4 md:px-12 lg:px-16">
+    <div className="navbar bg-black sticky z-20 top-0 left-0 right-0 px-4 md:px-12 lg:px-16">
       <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex="0" className="btn btn-ghost lg:hidden">

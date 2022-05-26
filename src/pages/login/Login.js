@@ -81,11 +81,7 @@ const Login = () => {
             {error?.message && (
               <span className="text-red-500">{error?.message}</span>
             )}
-            <input
-              type="submit"
-              defaultValue="Login"
-              className="btn w-full mt-2"
-            />
+            <input type="submit" value="Login" className="btn w-full mt-2" />
           </form>
           <p className=" text-sm mt-2">
             New to WoodStore?{" "}
