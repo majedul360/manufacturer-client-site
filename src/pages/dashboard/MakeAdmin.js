@@ -16,7 +16,6 @@ const MakeAdmin = () => {
       },
     }).then((res) => res.json())
   );
-  console.log(users);
   return (
     <div>
       <table className="table w-full">
@@ -30,7 +29,7 @@ const MakeAdmin = () => {
         <tbody>
           {users?.map((user, index) => (
             <MakeAdminRow
-              key={users._id}
+              key={user._id}
               index={index}
               user={user}
               refetch={refetch}

@@ -21,11 +21,11 @@ const CheckOutForm = ({ data }) => {
         .then((res) => res.json())
         .then((result) => {
           if (result?.clientSecret) {
-            setClientSecret(result.clientSecret);
+            setClientSecret(result?.clientSecret);
           }
         });
     }
-  }, []);
+  }, [data]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -83,7 +83,8 @@ const CheckOutForm = ({ data }) => {
         .then((res) => res.json())
         .then((data) => {
           console.log(data);
-        });
+        })
+        .catch((e) => console.log(e));
     }
   };
   return (

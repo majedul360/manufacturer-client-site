@@ -116,7 +116,7 @@ const AddProduct = () => {
             )}
             <input
               type="submit"
-              value="add a product"
+              defaultValue="add a product"
               className="btn w-full mt-2"
             />
           </form>

@@ -112,7 +112,7 @@ const AddReview = () => {
             )}
             <input
               type="submit"
-              value="add a review"
+              defaultValue="add a review"
               className="btn w-full mt-2"
             />
           </form>

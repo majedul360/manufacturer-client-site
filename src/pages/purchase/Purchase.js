@@ -84,7 +84,7 @@ const Purchase = () => {
                 </span>
                 <input
                   type="text"
-                  value={quantity}
+                  defaultValue={quantity}
                   className="input input-bordered text-lg max-w-[5rem]"
                 />
                 <span
@@ -113,7 +113,7 @@ const Purchase = () => {
         <div className="card-body">
           <form onSubmit={handleSubmit(onSubmit)}>
             <input
-              value={user?.displayName}
+              defaultValue={user?.displayName}
               disabled
               type="text"
               placeholder="Enter your name"
@@ -124,7 +124,7 @@ const Purchase = () => {
             <input
               type="email"
               disabled
-              value={user?.email}
+              defaultValue={user?.email}
               placeholder="Enter your email"
               className="input w-full input-bordered my-2"
             />
@@ -152,7 +152,7 @@ const Purchase = () => {
             )}
             <input
               type="submit"
-              value="Purchase"
+              defaultValue="Purchase"
               className="btn w-full mt-2"
               disabled={quantity < minOrder || quantity > available}
             />

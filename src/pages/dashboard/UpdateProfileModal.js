@@ -45,7 +45,7 @@ const UpdateProfileModal = ({ setModalOpen }) => {
               <input
                 disabled
                 type="text"
-                value={user?.displayName}
+                defaultValue={user?.displayName}
                 className="input w-full input-bordered my-2"
               />
               <br />
@@ -53,7 +53,7 @@ const UpdateProfileModal = ({ setModalOpen }) => {
               <input
                 type="email"
                 disabled
-                value={user?.email}
+                defaultValue={user?.email}
                 className="input w-full input-bordered my-2"
               />
               <br />
@@ -98,7 +98,11 @@ const UpdateProfileModal = ({ setModalOpen }) => {
               {errors.link?.type === "required" && (
                 <span className="text-red-500">Required</span>
               )}
-              <input type="submit" value="update" className="btn w-full mt-2" />
+              <input
+                type="submit"
+                defaultValue="update"
+                className="btn w-full mt-2"
+              />
             </form>
           </div>
           <div className="modal-action">

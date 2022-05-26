@@ -6,7 +6,7 @@ const Gallery = () => {
       <h3 className="px-4 md:px-8 lg:px-32 pt-20 pb-8 text-4xl">
         Equipment’s Gallery
       </h3>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 px-4 md:px-8 lg:px-32 pb-20">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 px-4 md:px-8 lg:px-32">
         <img
           src="images/Galler-01.png"
           alt=""

@@ -9,7 +9,7 @@ import {
 import { faAvianex } from "@fortawesome/free-brands-svg-icons";
 const BusinessSummery = () => {
   return (
-    <div>
+    <div className="mt-20">
       <h2 className="text-center pb-12 text-4xl">Business Summery</h2>
       <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-12 px-4 md:px-8 lg:px-32 text-center py-8">
         <div>
