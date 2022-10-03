@@ -11,7 +11,7 @@ const ManageProducts = () => {
     data: products,
     refetch,
   } = useQuery("products", () =>
-    fetch(`https://wood-store.herokuapp.com/products`, {
+    fetch(`http://localhost:5000/products`, {
       method: "GET",
       headers: {
         "content-type": "application/json",

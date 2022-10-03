@@ -11,7 +11,7 @@ const ManageOrdersLRow = ({
   const { _id, name, email, product, price, paid, status } = order;
 
   const changeStatus = (id) => {
-    fetch(`https://wood-store.herokuapp.com/changeStatus/${id}`, {
+    fetch(`http://localhost:5000/changeStatus/${id}`, {
       method: "PATCH",
       headers: {
         "content-type": "application/json",

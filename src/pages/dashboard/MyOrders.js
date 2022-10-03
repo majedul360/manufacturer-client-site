@@ -15,7 +15,7 @@ const MyOrders = () => {
     data: orders,
     refetch,
   } = useQuery("orders", () =>
-    fetch(`https://wood-store.herokuapp.com/orders/${user?.email}`, {
+    fetch(`http://localhost:5000/orders/${user?.email}`, {
       method: "GET",
       headers: {
         "content-type": "application/json",

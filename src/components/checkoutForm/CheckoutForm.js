@@ -10,7 +10,7 @@ const CheckOutForm = ({ data }) => {
   const [transactionId, setTransactionId] = useState("");
   useEffect(() => {
     if (data) {
-      fetch("https://wood-store.herokuapp.com/create-payment-intent", {
+      fetch("http://localhost:5000/create-payment-intent", {
         method: "POST",
         headers: {
           "content-type": "application/json",
@@ -72,7 +72,7 @@ const CheckOutForm = ({ data }) => {
       const payment = {
         transactionId: paymentIntent.id,
       };
-      fetch(`https://wood-store.herokuapp.com/order/${data?._id}`, {
+      fetch(`http://localhost:5000/order/${data?._id}`, {
         method: "PATCH",
         headers: {
           "content-type": "application/json",

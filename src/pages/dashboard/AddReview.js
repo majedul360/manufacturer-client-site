@@ -34,7 +34,7 @@ const AddReview = () => {
               img: result.data.url,
             };
 
-            fetch("https://wood-store.herokuapp.com/reviews", {
+            fetch("http://localhost:5000/reviews", {
               method: "POST",
               headers: {
                 "content-type": "application/json",

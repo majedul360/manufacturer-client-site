@@ -20,7 +20,7 @@ const UpdateProfileModal = ({ setModalOpen }) => {
       phone: data.phone,
       link: data.link,
     };
-    fetch(`https://wood-store.herokuapp.com/updateProfile/${user?.email}`, {
+    fetch(`http://localhost:5000/updateProfile/${user?.email}`, {
       method: "PUT",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(updatedProfile),

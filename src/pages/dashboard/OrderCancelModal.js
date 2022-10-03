@@ -2,7 +2,7 @@ import React from "react";
 
 const OrderCancelModal = ({ refetch, productId, setCancelOrder }) => {
   const cancelOrder = () => {
-    fetch(`https://wood-store.herokuapp.com/cancelOrder/${productId}`, {
+    fetch(`http://localhost:5000/cancelOrder/${productId}`, {
       method: "DELETE",
       headers: { "content-type": "application/json" },
     })

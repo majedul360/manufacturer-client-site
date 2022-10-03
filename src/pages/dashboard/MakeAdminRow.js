@@ -3,7 +3,7 @@ import React from "react";
 const MakeAdminRow = ({ user, index, refetch }) => {
   const { email, role } = user;
   const makeAdmin = () => {
-    fetch(`https://wood-store.herokuapp.com/users/${email}`, {
+    fetch(`http://localhost:5000/users/${email}`, {
       method: "PATCH",
       headers: {
         "content-type": "application/json",

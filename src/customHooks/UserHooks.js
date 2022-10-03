@@ -6,7 +6,7 @@ const useUser = (user) => {
   const [simpleUserLoading, setSimpleUserLoading] = useState(true);
   useEffect(() => {
     if (email) {
-      fetch(`https://wood-store.herokuapp.com/simpleUser/${email}`, {
+      fetch(`http://localhost:5000/simpleUser/${email}`, {
         method: "GET",
         headers: {
           "content-type": "application/json",
