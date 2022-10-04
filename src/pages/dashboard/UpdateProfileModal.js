@@ -20,11 +20,14 @@ const UpdateProfileModal = ({ setModalOpen }) => {
       phone: data.phone,
       link: data.link,
     };
-    fetch(`http://localhost:5000/updateProfile/${user?.email}`, {
-      method: "PUT",
-      headers: { "content-type": "application/json" },
-      body: JSON.stringify(updatedProfile),
-    })
+    fetch(
+      `https://menufacturer-server-side-h26rnk2hy-majedul360.vercel.app/updateProfile/${user?.email}`,
+      {
+        method: "PUT",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify(updatedProfile),
+      }
+    )
       .then((res) => res.json())
       .then((result) => {
         setModalOpen(false);

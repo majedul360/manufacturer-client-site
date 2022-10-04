@@ -10,14 +10,17 @@ const CheckOutForm = ({ data }) => {
   const [transactionId, setTransactionId] = useState("");
   useEffect(() => {
     if (data) {
-      fetch("http://localhost:5000/create-payment-intent", {
-        method: "POST",
-        headers: {
-          "content-type": "application/json",
-          authorization: `Bearer ${localStorage.getItem("accessToken")}`,
-        },
-        body: JSON.stringify(data),
-      })
+      fetch(
+        "https://menufacturer-server-side-h26rnk2hy-majedul360.vercel.app/create-payment-intent",
+        {
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+            authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+          },
+          body: JSON.stringify(data),
+        }
+      )
         .then((res) => res.json())
         .then((result) => {
           if (result?.clientSecret) {
@@ -72,14 +75,17 @@ const CheckOutForm = ({ data }) => {
       const payment = {
         transactionId: paymentIntent.id,
       };
-      fetch(`http://localhost:5000/order/${data?._id}`, {
-        method: "PATCH",
-        headers: {
-          "content-type": "application/json",
-          authorization: `Bearer ${localStorage.getItem("accessToken")}`,
-        },
-        body: JSON.stringify(payment),
-      })
+      fetch(
+        `https://menufacturer-server-side-h26rnk2hy-majedul360.vercel.app/order/${data?._id}`,
+        {
+          method: "PATCH",
+          headers: {
+            "content-type": "application/json",
+            authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+          },
+          body: JSON.stringify(payment),
+        }
+      )
         .then((res) => res.json())
         .then((data) => {
           console.log(data);

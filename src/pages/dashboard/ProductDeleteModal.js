@@ -2,13 +2,16 @@ import React from "react";
 
 const ProductDeleteModal = ({ refetch, productId, setIsDeleteProduct }) => {
   const deleteProduct = () => {
-    fetch(`http://localhost:5000/product/${productId}`, {
-      method: "DELETE",
-      headers: {
-        "content-type": "application/json",
-        authorization: `Bearer ${localStorage.getItem("accessToken")}`,
-      },
-    })
+    fetch(
+      `https://menufacturer-server-side-h26rnk2hy-majedul360.vercel.app/product/${productId}`,
+      {
+        method: "DELETE",
+        headers: {
+          "content-type": "application/json",
+          authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+        },
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         setIsDeleteProduct(false);

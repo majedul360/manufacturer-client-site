@@ -6,13 +6,16 @@ const useUser = (user) => {
   const [simpleUserLoading, setSimpleUserLoading] = useState(true);
   useEffect(() => {
     if (email) {
-      fetch(`http://localhost:5000/simpleUser/${email}`, {
-        method: "GET",
-        headers: {
-          "content-type": "application/json",
-          authorization: `Bearer ${localStorage.getItem("accessToken")}`,
-        },
-      })
+      fetch(
+        `https://menufacturer-server-side-h26rnk2hy-majedul360.vercel.app/simpleUser/${email}`,
+        {
+          method: "GET",
+          headers: {
+            "content-type": "application/json",
+            authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+          },
+        }
+      )
         .then((res) => res.json())
         .then((result) => {
           setSimpleUser(result);

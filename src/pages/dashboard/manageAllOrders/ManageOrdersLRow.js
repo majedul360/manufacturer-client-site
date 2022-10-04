@@ -11,14 +11,17 @@ const ManageOrdersLRow = ({
   const { _id, name, email, product, price, paid, status } = order;
 
   const changeStatus = (id) => {
-    fetch(`http://localhost:5000/changeStatus/${id}`, {
-      method: "PATCH",
-      headers: {
-        "content-type": "application/json",
-        authorization: `Bearer ${localStorage.getItem("accessToken")}`,
-      },
-      body: JSON.stringify({}),
-    })
+    fetch(
+      `https://menufacturer-server-side-h26rnk2hy-majedul360.vercel.app/changeStatus/${id}`,
+      {
+        method: "PATCH",
+        headers: {
+          "content-type": "application/json",
+          authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+        },
+        body: JSON.stringify({}),
+      }
+    )
       .then((res) => res.json())
       .then((result) => refetch());
   };

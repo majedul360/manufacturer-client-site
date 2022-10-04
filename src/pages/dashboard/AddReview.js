@@ -34,14 +34,19 @@ const AddReview = () => {
               img: result.data.url,
             };
 
-            fetch("http://localhost:5000/reviews", {
-              method: "POST",
-              headers: {
-                "content-type": "application/json",
-                authorization: `Bearer ${localStorage.getItem("accessToken")}`,
-              },
-              body: JSON.stringify(review),
-            })
+            fetch(
+              "https://menufacturer-server-side-h26rnk2hy-majedul360.vercel.app/reviews",
+              {
+                method: "POST",
+                headers: {
+                  "content-type": "application/json",
+                  authorization: `Bearer ${localStorage.getItem(
+                    "accessToken"
+                  )}`,
+                },
+                body: JSON.stringify(review),
+              }
+            )
               .then((res) => res.json())
               .then((result) => {
                 setRatingError("");

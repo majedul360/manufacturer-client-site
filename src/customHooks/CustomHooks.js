@@ -5,11 +5,14 @@ const useToken = (user) => {
   const email = user?.user?.email;
   useEffect(() => {
     if (email) {
-      fetch(`http://localhost:5000/users/${email}`, {
-        method: "PUT",
-        headers: { "content-type": "application/json" },
-        body: JSON.stringify({ email }),
-      })
+      fetch(
+        `https://menufacturer-server-side-h26rnk2hy-majedul360.vercel.app/users/${email}`,
+        {
+          method: "PUT",
+          headers: { "content-type": "application/json" },
+          body: JSON.stringify({ email }),
+        }
+      )
         .then((res) => res.json())
         .then((result) => {
           if (result?.accessToken) {

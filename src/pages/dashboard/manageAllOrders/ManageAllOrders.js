@@ -15,13 +15,16 @@ const ManageAllOrders = () => {
     data: orders,
     refetch,
   } = useQuery("allOrders", () =>
-    fetch(`http://localhost:5000/orders`, {
-      method: "GET",
-      headers: {
-        "content-type": "application/json",
-        authorization: `Bearer ${localStorage.getItem("accessToken")}`,
-      },
-    }).then((res) => res.json())
+    fetch(
+      `https://menufacturer-server-side-h26rnk2hy-majedul360.vercel.app/orders`,
+      {
+        method: "GET",
+        headers: {
+          "content-type": "application/json",
+          authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+        },
+      }
+    ).then((res) => res.json())
   );
 
   return (

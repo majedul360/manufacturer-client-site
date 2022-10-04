@@ -23,11 +23,14 @@ const MyProfile = () => {
       phone: data.phone,
       link: data.link,
     };
-    fetch("http://localhost:5000/myProfile", {
-      method: "POST",
-      headers: { "content-type": "application/json" },
-      body: JSON.stringify(profileData),
-    })
+    fetch(
+      "https://menufacturer-server-side-h26rnk2hy-majedul360.vercel.app/myProfile",
+      {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify(profileData),
+      }
+    )
       .then((res) => res.json())
       .then((result) => {
         reset();

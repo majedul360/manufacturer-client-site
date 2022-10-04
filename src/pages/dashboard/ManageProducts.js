@@ -11,12 +11,15 @@ const ManageProducts = () => {
     data: products,
     refetch,
   } = useQuery("products", () =>
-    fetch(`http://localhost:5000/products`, {
-      method: "GET",
-      headers: {
-        "content-type": "application/json",
-      },
-    }).then((res) => res.json())
+    fetch(
+      `https://menufacturer-server-side-h26rnk2hy-majedul360.vercel.app/products`,
+      {
+        method: "GET",
+        headers: {
+          "content-type": "application/json",
+        },
+      }
+    ).then((res) => res.json())
   );
   return (
     <div className="overflow-x-auto">

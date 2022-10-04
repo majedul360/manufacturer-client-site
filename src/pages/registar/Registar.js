@@ -20,6 +20,7 @@ const Registar = () => {
 
   const { token } = useToken(user);
   const navigate = useNavigate();
+  console.log(token);
   if (token) {
     navigate("/");
   }

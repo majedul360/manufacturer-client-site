@@ -7,7 +7,9 @@ const Reviews = () => {
     error,
     data: reviews,
   } = useQuery("reviews", () =>
-    fetch("http://localhost:5000/reviews").then((res) => res.json())
+    fetch(
+      "https://menufacturer-server-side-h26rnk2hy-majedul360.vercel.app/reviews"
+    ).then((res) => res.json())
   );
   return (
     <>

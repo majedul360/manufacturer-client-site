@@ -21,7 +21,9 @@ const Purchase = () => {
   } = useForm();
 
   useEffect(() => {
-    fetch(`http://localhost:5000/product/${id}`)
+    fetch(
+      `https://menufacturer-server-side-h26rnk2hy-majedul360.vercel.app/product/${id}`
+    )
       .then((res) => res.json())
       .then((data) => {
         setProduct(data);
@@ -41,11 +43,14 @@ const Purchase = () => {
       produtCode: product?._id,
     };
 
-    fetch("http://localhost:5000/purchase", {
-      method: "POST",
-      headers: { "content-type": "application/json" },
-      body: JSON.stringify(bookingProduct),
-    })
+    fetch(
+      "https://menufacturer-server-side-h26rnk2hy-majedul360.vercel.app/purchase",
+      {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify(bookingProduct),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         reset();

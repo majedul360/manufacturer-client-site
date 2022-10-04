@@ -31,14 +31,17 @@ const AddProduct = () => {
             img: result.data.url,
           };
 
-          fetch("http://localhost:5000/products", {
-            method: "POST",
-            headers: {
-              "content-type": "application/json",
-              authorization: `Bearer ${localStorage.getItem("accessToken")}`,
-            },
-            body: JSON.stringify(product),
-          })
+          fetch(
+            "https://menufacturer-server-side-h26rnk2hy-majedul360.vercel.app/products",
+            {
+              method: "POST",
+              headers: {
+                "content-type": "application/json",
+                authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+              },
+              body: JSON.stringify(product),
+            }
+          )
             .then((res) => res.json())
             .then((result) => {
               reset();

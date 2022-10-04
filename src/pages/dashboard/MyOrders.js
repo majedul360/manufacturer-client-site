@@ -15,13 +15,16 @@ const MyOrders = () => {
     data: orders,
     refetch,
   } = useQuery("orders", () =>
-    fetch(`http://localhost:5000/orders/${user?.email}`, {
-      method: "GET",
-      headers: {
-        "content-type": "application/json",
-        authorization: `Bearer ${localStorage.getItem("accessToken")}`,
-      },
-    }).then((res) => res.json())
+    fetch(
+      `https://menufacturer-server-side-h26rnk2hy-majedul360.vercel.app/orders/${user?.email}`,
+      {
+        method: "GET",
+        headers: {
+          "content-type": "application/json",
+          authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+        },
+      }
+    ).then((res) => res.json())
   );
 
   return (

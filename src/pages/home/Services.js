@@ -8,7 +8,9 @@ const Services = () => {
     error,
     data: services,
   } = useQuery("services", () =>
-    fetch("http://localhost:5000/services").then((res) => res.json())
+    fetch(
+      "https://menufacturer-server-side-h26rnk2hy-majedul360.vercel.app/services"
+    ).then((res) => res.json())
   );
 
   return (

@@ -8,7 +8,9 @@ const Tools = () => {
     error,
     data: products,
   } = useQuery("products", () =>
-    fetch("http://localhost:5000/products").then((res) => res.json())
+    fetch(
+      "https://menufacturer-server-side-h26rnk2hy-majedul360.vercel.app/products"
+    ).then((res) => res.json())
   );
   return (
     <>

@@ -2,10 +2,13 @@ import React from "react";
 
 const OrderCancelModal = ({ refetch, productId, setCancelOrder }) => {
   const cancelOrder = () => {
-    fetch(`http://localhost:5000/cancelOrder/${productId}`, {
-      method: "DELETE",
-      headers: { "content-type": "application/json" },
-    })
+    fetch(
+      `https://menufacturer-server-side-h26rnk2hy-majedul360.vercel.app/cancelOrder/${productId}`,
+      {
+        method: "DELETE",
+        headers: { "content-type": "application/json" },
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         setCancelOrder(false);
